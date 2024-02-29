@@ -6,7 +6,7 @@ const status = document.getElementById("status");
 const description = document.getElementById("description");
 const price = document.getElementById("price");
 const btn = document.getElementById("btn");
-
+const filtir = document.getElementById("filtir");
 btn &&
   btn.addEventListener("click", function (e) {
     e.preventDefault();
@@ -103,3 +103,18 @@ const result = words.filter((word) => word.length > 6);
 
 console.log(result);
 // Expected output: Array ["exuberant", "destruction", "present"]
+
+const mask = document.querySelector(".mask");
+window.addEventListener("load", (e) => {
+  e.preventDefault();
+  mask.classList.add("loader--hidin");
+  setTimeout(() => {
+    mask.remove();
+  }, 3000);
+});
+const body = document.querySelector("body");
+const toggle = document.getElementById("toggle");
+toggle.onclick = function () {
+  toggle.classList.toggle("active");
+  body.classList.toggle("active");
+};
